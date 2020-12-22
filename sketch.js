@@ -74,6 +74,8 @@ function draw() {
   detectCollision(stone,mango4);
   detectCollision(stone,mango5);
 
+  keyPressed();
+  
 }
 
 function mouseDragged(){
@@ -92,6 +94,13 @@ function detectCollision(object1,object2){
 
 	if(distance <= object1.r + object2.r){
 		Matter.Body.setStatic(object2.body,false);
+	}
+}
+
+function keyPressed(){
+	if(keyCode === 32){
+		Matter.Body.setPosition(stone.body, {x:120, y:415}) 
+		sling.attach(stone.body);
 	}
 }
 
