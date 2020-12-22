@@ -29,4 +29,3 @@ class Slingshot{
         this.body=bodyA; 
     }
     
-}
