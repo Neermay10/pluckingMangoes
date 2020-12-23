@@ -26,7 +26,8 @@ class Slingshot{
     }
 
     attach(bodyA){ 
-        this.body=bodyA; 
+        this.body.bodyA=bodyA; 
+        Matter.Body.setPosition(stone.body, {x:120, y:415})
     }
     
 }
