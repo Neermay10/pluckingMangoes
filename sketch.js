@@ -11,6 +11,7 @@ var stone;
 var sling
 var boy,boyImage;
 var mango1,mango2,mango3,mango4,mango5;
+var launchingForce = 150;
 
 function preload(){
 	treeImage = loadImage("tree.png");
@@ -24,6 +25,7 @@ function setup() {
 
 	engine = Engine.create();
 	world = engine.world;
+
 
 	tree = createSprite(1100,300);
 	tree.addImage(treeImage);
@@ -73,8 +75,6 @@ function draw() {
   detectCollision(stone,mango3);
   detectCollision(stone,mango4);
   detectCollision(stone,mango5);
-
-  keyPressed();
   
 }
 
@@ -98,8 +98,7 @@ function detectCollision(object1,object2){
 }
 
 function keyPressed(){
-	if(keyCode === 32){
-		Matter.Body.setPosition(stone.body, {x:120, y:415}) 
+	if(keyCode === 32){ 
 		sling.attach(stone.body);
 	}
 }
