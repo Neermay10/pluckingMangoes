@@ -6,7 +6,7 @@ class Stone{
             friction:1.0,
             density:1.2
         }
-        this.body = Bodies.rectangle(x, y, r, options);
+        this.body = Bodies.circle(x, y, r, options);
         this.r = r;
         this.image = loadImage("stone.png");
         World.add(world, this.body);
